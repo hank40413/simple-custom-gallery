@@ -1,8 +1,3 @@
-<?php
-	include_once("model/require_index.inc.php");
-	$img = new img();
-?>
-
 <html>
 	<head>
 		<? header("Content-type: text/html; charset=utf-8"); ?>
