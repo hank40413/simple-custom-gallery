@@ -1,5 +1,7 @@
 <?php
-	include_once("model/require_index.inc.php");
+	// 與 controller 連結
+	include_once("/controller/main.cls.php");
+	$main = new main();
 ?>
 
 <html>
@@ -12,7 +14,7 @@
 		//根據get內的menu參數路由
 		switch ($_GET["menu"]) {
 			case "main":
-				require("view/main.php");
+				$main->showMain();
 				break;
 			case "create":
 				require ("view/create.php");

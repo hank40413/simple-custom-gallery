@@ -1,10 +1,11 @@
 <?php
+	// 與 controller 連結
 	require_once("/controller/main.cls.php");
 	$main = new main();
-	$main->test();
 ?>
 
 <body>
+	<h1>Main</h1>
 	<?php 
 		// var_dump($img->sel_all_img());
 		// while($row = $img->sel_all_img()->fetch_assoc()) {
