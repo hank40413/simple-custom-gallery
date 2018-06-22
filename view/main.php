@@ -6,10 +6,13 @@
 
 <body>
 	<h1>Main</h1>
+	<a href="index.php?menu=create">Create</a>　
+	<a href="index.php?menu=delete">Delete</a><br><br>
 	<?php 
-		// var_dump($img->sel_all_img());
-		// while($row = $img->sel_all_img()->fetch_assoc()) {
-			// echo "<img id='img{$row["id"]}' src='img/{$row["name"]}.jpg' width='800' height='450' /><br><br>";
-		// }
+		$gallery = $main->sel_all_img();
+		for ($i = 0; $i < count($gallery); $i++) {
+			echo "<a href='index.php?menu=read&img={$gallery[$i]["name"]}'><img id='img{$gallery[$i]["id"]}' src='img/{$gallery[$i]["name"]}.jpg' width='800' height='450' /></a> ";
+			
+		}
 	?>	
 </body>

@@ -15,6 +15,14 @@
 		public function showMain() {
 			require("/view/main.php");
 		}
+		
+		// 操作資料庫
+		
+		// 選取 img 資料表內所有資料
+		public function sel_all_img() {
+			return $this->img->sel_all_img();
+		}
+		
 		public function test() {
 			var_dump($this->img);
 		}
