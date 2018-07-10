@@ -18,9 +18,6 @@
 			
 			return $this->db->selectRecords($sql);
 		}
-		public function test() {
-			var_dump($this->db);
-		}
 	}
 
 
