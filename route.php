@@ -21,7 +21,7 @@
 			break;
 			
 		default:
-			require("view/main.php");
+			$main->showMain();
 			break;
 	}
 ?>
