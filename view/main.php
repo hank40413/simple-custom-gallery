@@ -4,12 +4,50 @@
 	$main = new main();
 ?>
 
+<head>
+	<link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+	<style  type="text/css">
+		.images-grid .image-wrapper {
+			position: relative;
+			display: inline-block;
+			margin-top: 5px;
+		}
+		.images-grid .image-wrapper .image-overlay {
+			display: none;
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background: rgba(0, 0, 0, 0.5);
+			cursor: pointer;
+		}
+		.image-overlay .plus-sign {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 50px;
+			height: 50px;
+			margin: -25px 0 0 -25px;
+			color: #fff;
+			font-size: 40px;
+			font-weight: bold;
+			line-height: 50px;
+			text-align: center;
+			text-decoration: none;
+		}
+		.images-grid .image-wrapper:hover .image-overlay {
+			display: block;
+		}
+	</style>
+</head>
+
 <body>
 	<h1>Main</h1>
 	<a href="index.php?menu=create">Create</a>　
 	<a href="index.php?menu=delete">Delete</a><br><br>
 
-	<div id="images_grid" class="images-grid" >
+	<div id="images-grid" class="images-grid" >
 	</div>
 </body>
 
@@ -20,17 +58,18 @@
 	$(document).ready(function() {
 		// 抓取資料庫中所有的資料以後，對應至伺服器中所有的圖片檔案，建立一個圖片集
 		for (index in gallery) {
-			$("#images_grid").append("<div class='image-wrapper' ></div>");
+			$("#images-grid").append("<div class='image-wrapper' ><img class='image-thumb'/></div>");
 			$(".image-wrapper").last().attr("data-width", gallery[index]['width']);
 			$(".image-wrapper").last().attr("data-height", gallery[index]['height']);
-			$(".image-wrapper").last().html("<img class='image-thumb'/>");
 			$(".image-wrapper").last().children().attr("src", 'img/' + gallery[index]['name'] + '.jpg');
+			$(".image-wrapper").last().append("<div class='image-overlay'><a class='plus-sign' href='javascript:void(0)'>+</a></div>");
 		}
 
 		// 縮圖工具，讓所有的縮圖並排列
 		$(".images-grid").imagesGrid({
 			rowHeight: 250,
-			margin: 3
+			margin: 3, 
+			imageSelector: '.image-thumb'
 		});
 	});
 </script>
