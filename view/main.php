@@ -22,19 +22,10 @@
 			background: rgba(0, 0, 0, 0.5);
 			cursor: pointer;
 		}
-		.image-overlay .plus-sign {
+		.image-overlay .image-origin {
 			position: absolute;
-			top: 50%;
-			left: 50%;
-			width: 50px;
-			height: 50px;
-			margin: -25px 0 0 -25px;
-			color: #fff;
-			font-size: 40px;
-			font-weight: bold;
-			line-height: 50px;
-			text-align: center;
-			text-decoration: none;
+			width: 100%;
+			height: 100%;
 		}
 		.images-grid .image-wrapper:hover .image-overlay {
 			display: block;
@@ -61,8 +52,9 @@
 			$("#images-grid").append("<div class='image-wrapper' ><img class='image-thumb'/></div>");
 			$(".image-wrapper").last().attr("data-width", gallery[index]['width']);
 			$(".image-wrapper").last().attr("data-height", gallery[index]['height']);
-			$(".image-wrapper").last().children().attr("src", 'img/' + gallery[index]['name'] + '.jpg');
-			$(".image-wrapper").last().append("<div class='image-overlay'><a class='plus-sign' href='javascript:void(0)'>+</a></div>");
+			$(".image-wrapper").last().children().attr("src", "img/" + gallery[index]['name'] + ".jpg");
+			$(".image-wrapper").last().append("<div class='image-overlay'><a class='image-origin'/></div>");
+			$(".image-overlay").last().children().attr("href", "index.php?menu=read&img=" + gallery[index]['name'])
 		}
 
 		// 縮圖工具，讓所有的縮圖並排列
