@@ -35,6 +35,7 @@
 			display: block;
 			width: 80%;
 			max-width: 1000px;
+			cursor: pointer;
 		}
 		
 		/* The Close Button */
@@ -123,14 +124,23 @@
 			});
 		}
 		
-		$(".image-thumb").on("click", function() {
-			$(".modal").css("display", "block");
-			$(".modal-content").attr("src", this.src);
-		});
-		
-		$(".close").on("click", function() {
-			$(".modal").css("display", "none");
-		});
+		// 圖片盒程式碼
+		{
+			// 點選圖片時將會顯示此圖片的圖片檢視盒
+			$(".image-thumb").on("click", function() {
+				var clickIndex = $(".image-thumb").index($(this));
+				$(".modal").css("display", "block");
+				$(".modal-content").attr("src", this.src);
+				$(".modal-content").on("click", function() {
+					window.location.href = "index.php?menu=read&img=" + gallery[clickIndex]['name'];
+				});
+			});
+			
+			// 點選圖片以外的地方將會關閉此圖片盒
+			$(".close, .modal").on("click", function() {
+				$(".modal").css("display", "none");
+			});
+		}
 		
 	});
 </script>
