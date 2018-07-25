@@ -10,6 +10,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<!-- CSS -->
 		<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css"> -->
+		
 		<style type="text/css">
 			body {
 				background-color:#fafafa;
@@ -17,6 +18,8 @@
 			}
 		</style>
 		
+		<!-- Google Icons -->
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<!-- JQuery -->
 		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 		<!-- JQuery 縮圖套件 -->
