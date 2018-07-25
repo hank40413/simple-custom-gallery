@@ -7,11 +7,14 @@
 <html>
 	<head>
 		<? header("Content-type: text/html; charset=utf-8"); ?>
-		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<!-- CSS -->
 		<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css"> -->
 		<style type="text/css">
-			body { background-color:#fafafa;}
+			body {
+				background-color:#fafafa;
+				font-family: Arial, Helvetica, sans-serif;
+			}
 		</style>
 		
 		<!-- JQuery -->
