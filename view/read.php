@@ -13,7 +13,7 @@
 <script>
 	$(document).ready(function() {
 		$(".back").on("click", function() {
-			window.history.go(-1);
+			window.location.href = "/CRUD";
 		});
 	})
 </script>

@@ -84,10 +84,11 @@
 </head>
 
 <body>
-	<h1>Main</h1>
-	<a href="index.php?menu=create">Create</a>　
-	<a href="index.php?menu=delete">Delete</a><br><br>
-
+	<div id="menu" style="margin-bottom: 5px;" >
+		<button type="button" class="btn btn-success">Create</button>
+		<button type="button" class="btn btn-danger">Delete</button>
+	</div>
+	
 	<!-- 圖庫 -->
 	<div id="images-grid" class="images-grid" >
 	</div>
