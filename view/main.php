@@ -5,7 +5,6 @@
 ?>
 
 <head>
-	<link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
 	<style  type="text/css">
 		.image-thumb {
 			cursor: pointer;
