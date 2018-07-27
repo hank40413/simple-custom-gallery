@@ -84,8 +84,8 @@
 
 <body>
 	<div id="menu" style="margin-bottom: 5px;" >
-		<button type="button" class="btn btn-success">Create</button>
-		<button type="button" class="btn btn-danger">Delete</button>
+		<button id="btnCreate" type="button" class="btn btn-success">Upload</button>
+		<button id="btnDelete" type="button" class="btn btn-danger">Delete</button>
 	</div>
 	
 	<!-- 圖庫 -->
@@ -142,5 +142,16 @@
 			});
 		}
 		
+		// 功能按鈕
+		{
+			// create按鈕，連結到上傳頁面
+			$("#btnCreate").on("click", function() {
+				window.location.href = "index.php?menu=create";
+			});
+			// delete按鈕，連結到刪除頁面
+			$("#btnDelete").on("click", function() {
+				window.location.href = "index.php?menu=delete";
+			});
+		}
 	});
 </script>
