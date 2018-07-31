@@ -1,9 +1,17 @@
+<?php
+	// 與 controller 連結
+	require_once("/controller/create.cls.php");
+	$create = new create();
+?>
+
 <body>
 	<h1>Upload</h1>
 	<a href="index.php?menu=main">Main</a>
-	<form action="" enctype="multipart/form-data">
-	   <input type="file" id="uploadInput" accept="image/*" style="display: none;" />
+	
+	<form action="index.php?menu=create" method="post" enctype="multipart/form-data">
+	   <input type="file" name="uploadInput" id="uploadInput" accept="image/*" style="display: none;" />
 	   <img id="uploadPreview" src="icon/icons8-add-image-96.png" style="cursor: pointer; margin-top: 10px;" />
+	   <input type="submit">
 	</form>
 </body>
 

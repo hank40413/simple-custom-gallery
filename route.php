@@ -5,7 +5,7 @@
 			$main->showMain();
 			break;
 		case "create":
-			require ("view/create.php");
+			$create->showCreate();
 			break;
 			
 		case "read":

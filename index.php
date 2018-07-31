@@ -1,7 +1,10 @@
 <?php
 	// 與 controller 連結
 	include_once("/controller/main.cls.php");
+	include_once("/controller/create.cls.php");
+	
 	$main = new main();
+	$create = new create();
 ?>
 
 <html>
