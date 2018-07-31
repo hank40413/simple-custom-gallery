@@ -2,16 +2,20 @@
 	// 與 controller 連結
 	require_once("/controller/create.cls.php");
 	$create = new create();
+	
+
 ?>
 
 <body>
 	<h1>Upload</h1>
 	<a href="index.php?menu=main">Main</a>
 	
-	<form action="index.php?menu=create" method="post" enctype="multipart/form-data">
-	   <input type="file" name="uploadInput" id="uploadInput" accept="image/*" style="display: none;" />
-	   <img id="uploadPreview" src="icon/icons8-add-image-96.png" style="cursor: pointer; margin-top: 10px;" />
-	   <input type="submit">
+	<form action="index.php?menu=create&action=upload" method="post" enctype="multipart/form-data">
+		<input type="file" name="uploadInput" id="uploadInput" accept="image/*" style="display: none;" />
+		<input id="uploadSubmit" type="submit" style="display: none;">
+		<button id="uploadSubmitBtn" type="button" class="btn btn-primary">上傳</button>
+		<br>
+		<img id="uploadPreview" src="icon/icons8-add-image-96.png" style="cursor: pointer; margin-top: 10px;" />
 	</form>
 </body>
 
@@ -19,6 +23,14 @@
 $(document).ready(function() {
 	$("#uploadPreview").on("click", function() {
 		$("#uploadInput").click();
+	});
+	$("#uploadSubmitBtn").on("click", function() {
+		if ($("#uploadInput")[0].files.length == 0) {
+			alert("請先上傳圖片");
+		}
+		else {
+			$("#uploadSubmit").click();
+		}
 	});
 });
 
@@ -42,4 +54,6 @@ function readURL(input){
 		}
 	}
 }
+
+<? $create->upload(); ?>
 </script>

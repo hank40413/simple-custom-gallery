@@ -15,5 +15,17 @@
 		public function showCreate() {
 			require("/view/create.php");
 		}
+		
+		public function upload() {
+			if ($_GET['action'] == "upload") {
+				echo "loading()";
+			}
+		}
 	}
 ?>
+
+<script>
+function loading() {
+	document.body.innerHTML = "上傳中請稍候…";
+}
+</script>
