@@ -5,6 +5,7 @@
 ?>
 
 <head>
+	<title>Main</title>
 	<style  type="text/css">
 		.image-thumb {
 			cursor: pointer;

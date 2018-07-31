@@ -1,3 +1,6 @@
+<head>
+	<title>Read</title>
+</head>
 <body>
 	<i id="back" class="material-icons" >arrow_back</i><br>
 	<?php

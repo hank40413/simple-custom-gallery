@@ -12,8 +12,8 @@
 			require("view/read.php");
 			break;
 			
-		case "update":
-			require("view/update.php");
+		case "upload":
+			require("view/upload.php");
 			break;
 			
 		case "delete":

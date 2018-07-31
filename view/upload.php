@@ -1,4 +1,15 @@
+<head>
+	<title>Upload</title>
+</head>
 <body>
-	<h1>Update</h1>
-	<a href="index.php?menu=main">Main</a>
+	<i id="back" class="material-icons" >arrow_back</i><br>
+	
+<?php
+	$imgData = $_POST["uploadImgBlob"];
+	$imgBlob = base64_decode(substr($imgData, strpos($imgData, ",") + 1));
+
+    $imagick = new Imagick();
+    $imagick->readImageBlob($imgBlob);
+	$imagick->setImageFormat("jpg");
+?>
 </body>
