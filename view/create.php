@@ -7,15 +7,14 @@
 ?>
 
 <body>
-	<h1>Upload</h1>
-	<a href="index.php?menu=main">Main</a>
+	<i id="back" class="material-icons" >arrow_back</i><br>
 	
 	<form action="index.php?menu=create&action=upload" method="post" enctype="multipart/form-data">
 		<input type="file" name="uploadInput" id="uploadInput" accept="image/*" style="display: none;" />
 		<input id="uploadSubmit" type="submit" style="display: none;">
-		<button id="uploadSubmitBtn" type="button" class="btn btn-primary">上傳</button>
+		<button id="uploadSubmitBtn" type="button" class="btn btn-primary" >上傳</button>
 		<br>
-		<img id="uploadPreview" src="icon/icons8-add-image-96.png" style="cursor: pointer; margin-top: 10px;" />
+		<img id="uploadPreview" src="icon/icons8-add-image-96.png" style="cursor: pointer; margin-top: 10px; margin-left: 48px;" />
 	</form>
 </body>
 
@@ -54,6 +53,4 @@ function readURL(input){
 		}
 	}
 }
-
-<? $create->upload(); ?>
 </script>

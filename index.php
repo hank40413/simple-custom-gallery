@@ -20,6 +20,15 @@
 				background-color:#fafafa;
 				font-size: 18px;
 			}
+			#back {
+				margin-top: 20px; 
+				margin-bottom: 30px; 
+				border-radius: 22.5px; 
+				background-color: lightgray; 
+				font-size: 48px; 
+				color: white; 
+				cursor: pointer;
+			}
 		</style>
 		
 		<!-- Google Icons -->
@@ -37,4 +46,12 @@
 	<?php require_once("route.php"); ?>
 	
 </html>
+
+<script>
+	$(document).ready(function() {
+		$("#back").on("click", function() {
+			window.location.href = "/CRUD";
+		});
+	})
+</script>
 
