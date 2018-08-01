@@ -33,8 +33,6 @@
 		.modal-content {
 			margin: auto;
 			display: block;
-			width: 80%;
-			max-width: 1000px;
 			cursor: pointer;
 		}
 		
@@ -140,6 +138,16 @@
 			// 點選圖片以外的地方將會關閉此圖片盒
 			$(".close, .modal").on("click", function() {
 				$(".modal").css("display", "none");
+			});
+			
+			// 根據圖片長寬做出正確的顯示
+			$(".image-wrapper").on("click", function() {
+				if ($(this)[0].clientWidth > $(this)[0].clientHeight) {
+					$(".modal-content").css({"width":"80%","max-width":"1200px","height":"","max-height":""});
+				}
+				else {
+					$(".modal-content").css({"width":"auto","max-width":"","height":"80%","max-height":"800px"});
+				}
 			});
 		}
 		
