@@ -13,7 +13,7 @@
 			break;
 			
 		case "upload":
-			require("view/upload.php");
+			$upload->showUpload();
 			break;
 			
 		case "delete":

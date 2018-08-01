@@ -2,9 +2,11 @@
 	// 與 controller 連結
 	include_once("/controller/main.cls.php");
 	include_once("/controller/create.cls.php");
+	include_once("/controller/upload.cls.php");
 	
 	$main = new main();
 	$create = new create();
+	$upload = new upload();
 ?>
 
 <html>

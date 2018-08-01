@@ -11,12 +11,26 @@
 		}
 		
 		public function sel_all_img() {
-			$sql = "SELECT 
-						* 
-					FROM 
-						img";
+			$sql = 
+			"
+			SELECT 
+				* 
+			FROM 
+				img
+			";
 			
 			return $this->db->selectRecords($sql);
+		}
+		
+		public function add_img($name, $width, $height) {
+			$sql = 
+			"
+			INSERT INTO 
+				img (name, width, height) 
+			VALUES (" . $name . "," . $width . "," . $height . ")
+			";
+			
+			return $this->db->insertRecords($sql);
 		}
 	}
 

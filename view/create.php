@@ -2,8 +2,6 @@
 	// 與 controller 連結
 	require_once("/controller/create.cls.php");
 	$create = new create();
-	
-
 ?>
 
 <head>

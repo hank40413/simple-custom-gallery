@@ -1,3 +1,9 @@
+<?php
+	// 與 controller 連結
+	require_once("/controller/upload.cls.php");
+	$upload = new upload();
+?>
+
 <head>
 	<title>Upload</title>
 	<style>
@@ -37,7 +43,8 @@
 	</div>
 	
 <?php
-	$uploadImgName = "img/" . (String)time() . ".jpg";
+	$currentTime = (String)time();
+	$uploadImgName = "img/" . $currentTime . ".jpg";
 	
 	try {
 		$file = fopen($uploadImgName, "w");
@@ -52,8 +59,11 @@
 		
 		$imgWidth = $imagick->getImageWidth();
 		$imgHeight = $imagick->getImageHeight();
-
 		
+		var_dump($imgWidth);
+		var_dump($imgHeight);
+
+		var_dump($upload->add_img($currentTime, $imgWidth, $imgHeight));
 		$imagick->writeImage(realpath($uploadImgName));
 	}
 	catch(Exception $e) {

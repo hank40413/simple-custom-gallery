@@ -17,6 +17,7 @@
 			// echo "Connected successfully";
 		}
 		
+		// Select Records
 		function selectRecords($sql) {
 			$result = $this->DbObject->query($sql);
 			for ($i = 0; $i < $result->num_rows; $i++) {
@@ -24,6 +25,12 @@
 			}
 			
 			return $data;
+		}
+		
+		// Insert Records
+		function insertRecords($sql)
+		{
+			return $result = $this->DbObject->query($sql);
 		}
 	}
 	
