@@ -139,6 +139,13 @@
 			$(".close, .modal").on("click", function() {
 				$(".modal").css("display", "none");
 			});
+			$(document).keyup(function(e) {
+				// keyCode 27 為 esc 按鍵
+				// 當按下 esc 以後關閉圖片盒
+				if (e.keyCode == 27) {
+					$(".modal").css("display", "none");
+				}
+			});
 			
 			// 根據圖片長寬做出正確的顯示
 			$(".image-wrapper").on("click", function() {
