@@ -9,7 +9,7 @@
 			break;
 			
 		case "read":
-			require("view/read.php");
+			$read->showRead();
 			break;
 			
 		case "upload":
@@ -17,7 +17,7 @@
 			break;
 			
 		case "delete":
-			require("view/delete.php");
+			$delete->showDelete();
 			break;
 			
 		default:

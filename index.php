@@ -2,11 +2,15 @@
 	// 與 controller 連結
 	include_once("/controller/main.cls.php");
 	include_once("/controller/create.cls.php");
+	include_once("/controller/read.cls.php");
 	include_once("/controller/upload.cls.php");
+	include_once("/controller/delete.cls.php");
 	
 	$main = new main();
 	$create = new create();
+	$read = new read();
 	$upload = new upload();
+	$delete = new delete();
 ?>
 
 <html>
