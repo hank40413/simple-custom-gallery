@@ -1,2 +1,3 @@
-test.php
-cfg/cfg.inc.php
+img/*.jpg
+./test.php
+cfg/*.php
