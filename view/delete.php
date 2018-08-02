@@ -42,4 +42,21 @@
 	<div class="container">
 		<div class="loader"></div>
 	</div>
+	
+<?php
+	try {
+		if ($_GET["img"] != null && $_GET["action"] == "delete") {
+			$delete->disable_img($_GET["img"]);
+		}
+		else {
+			throw new Exception("未依照正確程序進入此頁面");
+		}
+	}
+	catch(Exception $e) {
+		echo "<script>alert('" . $e->getMessage() . "')</script>";
+	}
+	finally {
+		echo "<script>window.location.href = 'index.php'</script>";
+	}
+?>
 </body>

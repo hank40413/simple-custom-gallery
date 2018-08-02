@@ -32,6 +32,12 @@
 		{
 			return $result = $this->DbObject->query($sql);
 		}
+		
+		// Update Records
+		function updateRecords($sql)
+		{
+			return $result = $this->DbObject->query($sql);
+		}
 	}
 	
 ?>

@@ -83,7 +83,7 @@
 
 <body>
 	<div id="menu" style="margin-bottom: 5px;" >
-		<button id="btnCreate" type="button" class="btn btn-success"><i class="fa fa-upload"></i> Upload</button>
+		<button id="btnUpload" type="button" class="btn btn-success"><i class="fa fa-upload"></i> Upload</button>
 	</div>
 	
 	<!-- 圖庫 -->
@@ -154,7 +154,7 @@
 		// 功能按鈕
 		{
 			// create按鈕，連結到上傳頁面
-			$("#btnCreate").on("click", function() {
+			$("#btnUpload").on("click", function() {
 				window.location.href = "index.php?menu=create";
 			});
 			// delete按鈕，連結到刪除頁面
