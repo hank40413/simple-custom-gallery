@@ -14,9 +14,9 @@
 		}
 		.loader {
 			display: block;
-			border: 16px solid #f3f3f3;
+			border: 16px solid #8da4d0;
 			border-radius: 50%;
-			border-top: 16px solid #929292;
+			border-top: 16px solid #25488d;
 			width: 120px;
 			height: 120px;
 			margin: auto;
@@ -73,6 +73,5 @@
 	finally {
 		echo "<script>window.location.href = 'index.php'</script>";
 	}
-
 ?>
 </body>

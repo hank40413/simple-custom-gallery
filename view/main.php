@@ -83,8 +83,7 @@
 
 <body>
 	<div id="menu" style="margin-bottom: 5px;" >
-		<button id="btnCreate" type="button" class="btn btn-success">Upload</button>
-		<button id="btnDelete" type="button" class="btn btn-danger">Delete</button>
+		<button id="btnCreate" type="button" class="btn btn-success"><i class="fa fa-upload"></i> Upload</button>
 	</div>
 	
 	<!-- 圖庫 -->
@@ -93,7 +92,7 @@
 	
 	<!-- 檢視盒 -->
 	<div id="vMainModal" class="modal">
-		<span class="close">&times;</span>
+		<span class="close"><i class="fa fa-remove"></i></span>
 		<img class="modal-content" id="modal-img">
 	</div>
 	
@@ -108,11 +107,12 @@
 		{
 			// 抓取資料庫中所有的資料以後，對應至伺服器中所有的圖片檔案，建立一個圖片集
 			for (index in gallery) {
-				$("#images-grid").append("<div class='image-wrapper' ><img class='image-thumb'/></div>");
-				$(".image-wrapper").last().attr("data-width", gallery[index]['width']);
-				$(".image-wrapper").last().attr("data-height", gallery[index]['height']);
-				$(".image-wrapper").last().children().attr("src", "img/" + gallery[index]['name'] + ".jpg");
-
+				if (gallery[index]['disable'] == 0) {
+					$("#images-grid").append("<div class='image-wrapper' ><img class='image-thumb'/></div>");
+					$(".image-wrapper").last().attr("data-width", gallery[index]['width']);
+					$(".image-wrapper").last().attr("data-height", gallery[index]['height']);
+					$(".image-wrapper").last().children().attr("src", "img/" + gallery[index]['name'] + ".jpg");
+				}
 			}
 
 			// 縮圖工具，讓所有的縮圖並排列
@@ -146,7 +146,7 @@
 					$(".modal-content").css({"width":"80%","max-width":"1200px","height":"","max-height":""});
 				}
 				else {
-					$(".modal-content").css({"width":"auto","max-width":"","height":"80%","max-height":"800px"});
+					$(".modal-content").css({"width":"auto","max-width":"","height":"90%","max-height":"800px"});
 				}
 			});
 		}
