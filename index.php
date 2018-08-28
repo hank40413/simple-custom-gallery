@@ -1,16 +1,22 @@
 <?php
+	session_start();
+	
 	// 與 controller 連結
 	include_once("/controller/main.cls.php");
 	include_once("/controller/create.cls.php");
 	include_once("/controller/read.cls.php");
 	include_once("/controller/upload.cls.php");
 	include_once("/controller/delete.cls.php");
+	include_once("/controller/login.cls.php");
 	
 	$main = new main();
 	$create = new create();
 	$read = new read();
 	$upload = new upload();
 	$delete = new delete();
+	$login = new login();
+	
+	// session_unset();
 ?>
 
 <html>
@@ -49,18 +55,39 @@
 				color: white; 
 				cursor: pointer;
 			}
+			.need-login {
+				display: none;
+			}
 		</style>
 	</head>
 	
+	<script>
+	<?php
+		// 判斷是否已登入
+		if ($_SESSION["logIn?"]) {
+			echo "var isLogIn = true;";
+		}
+		else {
+			echo "var isLogIn = false;";
+		}
+	?>
+	$(document).ready(function() {
+		$("#back").on("click", function() {
+			window.location.href = "/gallery";
+		});
+		$("#btnLogin").on("click", function() {
+			window.location.href = "index.php?menu=login";
+		});
+		if (isLogIn) {
+			$(".need-login").removeClass("need-login");
+		}
+	})
+	</script>
+	
+	<!-- 匯入 route 表，並根據內容顯示畫面 -->
 	<?php require_once("route.php"); ?>
 	
 </html>
 
-<script>
-	$(document).ready(function() {
-		$("#back").on("click", function() {
-			window.location.href = "/CRUD";
-		});
-	})
-</script>
+
 

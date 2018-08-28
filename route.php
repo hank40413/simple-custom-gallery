@@ -20,6 +20,10 @@
 			$delete->showDelete();
 			break;
 			
+		case "login":
+			$login->showLogin();
+			break;
+			
 		default:
 			$main->showMain();
 			break;

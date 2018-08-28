@@ -7,7 +7,7 @@
 		<a href="img/<? echo $_GET["img"] ?>.jpg" download>
 			<button id="btnDownload" type="button" class="btn btn-info"><i class="fa fa-download"></i> Download </button>
 		</a>
-		<button id="btnDelete" type="button" class="btn btn-danger"><i class="fa fa-remove"></i> Delete</button>
+		<button id="btnDelete" type="button" class="btn btn-danger need-login"><i class="fa fa-remove"></i> Delete</button>
 	</div>
 	<?php
 		if ($_GET["img"]) {

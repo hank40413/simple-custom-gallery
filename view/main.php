@@ -83,7 +83,8 @@
 
 <body>
 	<div id="menu" style="margin-bottom: 5px;" >
-		<button id="btnUpload" type="button" class="btn btn-success"><i class="fa fa-upload"></i> Upload</button>
+		<button id="btnLogin" type="button" class="btn btn-success" style="margin-bottom: 5px;">Log in</button>
+		<button id="btnUpload" type="button" class="btn btn-success need-login"><i class="fa fa-upload"></i> Upload</button>
 	</div>
 	
 	<!-- 圖庫 -->
@@ -111,6 +112,7 @@
 					$("#images-grid").append("<div class='image-wrapper' ><img class='image-thumb'/></div>");
 					$(".image-wrapper").last().attr("data-width", gallery[index]['width']);
 					$(".image-wrapper").last().attr("data-height", gallery[index]['height']);
+					$(".image-wrapper").last().children().attr("id", gallery[index]['name']);
 					$(".image-wrapper").last().children().attr("src", "img/" + gallery[index]['name'] + ".jpg");
 				}
 			}
@@ -127,11 +129,11 @@
 		{
 			// 點選圖片時將會顯示此圖片的圖片檢視盒
 			$(".image-thumb").on("click", function() {
-				var clickIndex = $(".image-thumb").index($(this));
+				var clickImg = this;
 				$(".modal").css("display", "block");
 				$(".modal-content").attr("src", this.src);
 				$(".modal-content").on("click", function() {
-					window.location.href = "index.php?menu=read&img=" + gallery[clickIndex]['name'];
+					window.location.href = "index.php?menu=read&img=" + clickImg.id;
 				});
 			});
 			
@@ -168,6 +170,14 @@
 			$("#btnDelete").on("click", function() {
 				window.location.href = "index.php?menu=delete";
 			});
+		}
+		
+		// 判斷是否登入，取消顯示登入按鈕
+		{		
+			if (isLogIn) {
+				$("#btnLogin").css("display", "none");
+			}
+			
 		}
 	});
 </script>

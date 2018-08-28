@@ -23,38 +23,47 @@
 </body>
 
 <script>
-$(document).ready(function() {
-	$("#uploadPreview").on("click", function() {
-		$("#uploadInput").click();
-	});
-	$("#uploadSubmitBtn").on("click", function() {
-		if ($("#uploadInput")[0].files.length == 0) {
-			alert("請先上傳圖片");
-		}
-		else {
-			$("#uploadSubmit").click();
-		}
-	});
-});
+// 若未登入，無法使用上傳功能
+if (!isLogIn) {
+	alert("尚未登入，無法使用此功能");
+	window.history.back();
+}
+else {
+	$(document).ready(function() {
 
-$("#uploadInput").change(function(){
-	readURL(this);
-});
 
-function readURL(input){
-	if(input.files && input.files[0]){
-		var reader = new FileReader();
-		
-		if (input.files[0].size < 1024 * 1024 * 3) {
-			reader.readAsDataURL(input.files[0]);
-			reader.onload = function (e) {
-				$("#uploadPreview").attr('src', e.target.result);
-				$("#uploadImgBlob").attr('value', e.target.result);
-				$("#uploadPreview").css({"width":"80%", "max-width":"1000px"});
+		$("#uploadPreview").on("click", function() {
+			$("#uploadInput").click();
+		});
+		$("#uploadSubmitBtn").on("click", function() {
+			if ($("#uploadInput")[0].files.length == 0) {
+				alert("請先上傳圖片");
 			}
-		}
-		else {
-			alert("請上傳低於3MB的圖檔");
+			else {
+				$("#uploadSubmit").click();
+			}
+		});
+	});
+
+	$("#uploadInput").change(function(){
+		readURL(this);
+	});
+
+	function readURL(input){
+		if(input.files && input.files[0]){
+			var reader = new FileReader();
+			
+			if (input.files[0].size < 1024 * 1024 * 5) {
+				reader.readAsDataURL(input.files[0]);
+				reader.onload = function (e) {
+					$("#uploadPreview").attr('src', e.target.result);
+					$("#uploadImgBlob").attr('value', e.target.result);
+					$("#uploadPreview").css({"width":"80%", "max-width":"1000px"});
+				}
+			}
+			else {
+				alert("請上傳低於5MB的圖檔");
+			}
 		}
 	}
 }
